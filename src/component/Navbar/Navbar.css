@@ -1,0 +1,30 @@
+header{
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 10px;
+}
+.navlogo{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+.navlogo img{
+    width: 37px;
+}
+.navlogo h3{
+    margin-top: 5px;
+    font-weight: 500;
+}
+ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    gap: 2em;
+}
+a{
+    text-decoration: none;
+}

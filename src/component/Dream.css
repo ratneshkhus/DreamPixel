@@ -1,0 +1,251 @@
+.wrapper {
+    background: #1E1E1E;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.logo_ai {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.logo_ai h4 {
+    margin-top: 5px;
+}
+
+.logo_ai img {
+    width: 35px;
+}
+.logo_ai span {
+    font-size: 0.8em;
+}
+
+.siedholder {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.aside_dremai {
+    width: 18vw;
+    height: 100%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sideitems {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    border-radius: 7px;
+    background: #2F2F2F;
+    padding: 8px 15px;
+    font-size: 0.9em;
+    text-decoration: none;
+}
+
+.DreamAI_main {
+    width: 88vw;
+    height: 100%;
+    background: #2F2F2F;
+    border-radius: 15px;
+    display: flex;
+    gap: 15px;
+    padding: 7px;
+    color: white;
+}
+
+.generators_here {
+    min-width: 42vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    color: white;
+}
+.generators_here span{
+    font-size: 0.8em;
+    opacity: 0.5;
+}
+
+.generated_image_and_options {
+    background: #1E1E1E;
+    padding: 7px;
+    width: 100%;
+    height: calc(100% - 130px);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.image_options_dreamai {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.image_optionsSec {
+    display: flex;
+    gap: 10px;
+}
+
+.mainimage {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+.imgholder_lasttime {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #000;
+}
+
+.image_options_dreamai button {
+    border: 1.5px solid #535353;
+    min-width: 25px !important;
+    height: 30px;
+    max-width: fit-content;
+    padding: 3px 7px;
+    background: #303030;
+    border-radius: 7px;
+    box-shadow: inset -4px 4px 13px #0000007a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: white;
+    font-size: 15px;
+}
+
+.promtbox {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 15px;
+    background: #1E1E1E;
+}
+.promtbox input{
+    height: 45px;
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+}
+.skeleton-loader {
+    position: relative;
+    height: 100%;
+    background: linear-gradient(-45deg, #2F2F2F 25%, #535353c8 50%, #2F2F2F 95%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+.image_options_dreamai .skeleton_button {
+    position: relative;
+    min-width: 30px !important;
+    height: 30px;
+    max-width: fit-content;
+    padding: 3px 7px;
+    background: linear-gradient(-45deg, #2F2F2F 25%, #535353c8 50%, #2F2F2F 95%);
+    background-size: 200% 100%;
+    border-radius: 7px;
+    color: transparent;
+    font-size: 15px;
+    animation: shimmer 2s infinite;
+}
+
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.mainimage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.historybro{
+    width: 100%;
+}
+.historybro h3{
+    margin-bottom: 0.5em;
+}
+.history_image_grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+}
+.historyimage{
+    width: 100%;
+    height: fit-content !important;
+    overflow: hidden;
+    background: #1E1E1E;
+    border-radius: 15px;
+    padding: 5px;
+}
+.historyimage img{
+    border-radius: 10px;
+    width: 100%;
+    object-fit: cover;
+}
+.imgviewall{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.rightisde{
+    width: 100%;
+    overflow-y: scroll;
+}
+.infocontainer{
+    margin-bottom:15px;
+    width: 100%;
+    height: 100px;
+    border-radius: 15px;
+    background: #1E1E1E;
+}
+.rightisde::-webkit-scrollbar {
+   display: none;
+  }
+
+  .AIbtnactive{
+    animation: 1s rotaionbg infinite;
+    transition: background 1s linear;
+    background: linear-gradient(180deg , #9A4AFF , #3AB8FF);
+    box-shadow: inset 0px -4px 10px #3c00ff , inset 0px 5px 7px #3AB8FF , 0px 4px 21px #000000c2;
+  }
+  @keyframes rotaionbg{
+    0%{
+        background: linear-gradient(180deg , #9A4AFF , #3AB8FF);   
+    }
+    100%{
+        background: linear-gradient(0deg , #8d30ff , #1babff);
+    }
+  }

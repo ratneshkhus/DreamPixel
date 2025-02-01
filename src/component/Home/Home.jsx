@@ -59,6 +59,7 @@ function Home() {
 
   }, []);
 
+
   const navigate = useNavigate();
 
   const handleClick = () => {

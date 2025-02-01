@@ -20,7 +20,7 @@ function Home() {
     const t0 = gsap.timeline();
     const t1 = gsap.timeline();
     t1.to([".c1", ".c2", ".c3", ".c4", ".c5", ".c6", ".c7"], {
-      delay : 2.1,
+      delay: 2.1,
       y: 0,
       duration: 0.9,
       ease: "back.out(0.3)",
@@ -38,21 +38,21 @@ function Home() {
       .to('.topdesign_section_ttl_lbls', { delay: 0.3, duration: 1, opacity: 1, ease: "easeInOut" }, "cards");
 
 
-    t0.to('.ttlone',{duration : 1.5 , x : "30%",ease: "easeInOut" },'ones')
-    .to('.ttltwo',{duration : 1.5 , x : "-30%",ease: "easeInOut" },'ones')
-    .to('.morph1',{duration : 1.5 , x : "20" , y : "50",ease: "easeInOut" },'ones')
-    .to('.morph2',{duration : 1.5 , x : "-20" , y : "40",ease: "easeInOut" },'ones')
-    .to('.morph3',{duration : 1.5 , x: "20",ease: "easeInOut" },'ones')
-    .to('.morph4',{duration : 1.5 , x : "-20" , y : "0",ease: "easeInOut" },'ones')
-    .to('.logo_liqiud_morph',{delay : 0.5,duration : 1.5 , height : "10vh" , width : "22vw",ease: "easeInOut" },'ones')
+    t0.to('.ttlone', { duration: 1.5, x: "30%", ease: "easeInOut" }, 'ones')
+      .to('.ttltwo', { duration: 1.5, x: "-30%", ease: "easeInOut" }, 'ones')
+      .to('.morph1', { duration: 1.5, x: "20", y: "50", ease: "easeInOut" }, 'ones')
+      .to('.morph2', { duration: 1.5, x: "-20", y: "30", ease: "easeInOut" }, 'ones')
+      .to('.morph3', { duration: 1.5, x: "20", ease: "easeInOut" }, 'ones')
+      .to('.morph4', { duration: 1.5, x: "-20", y: "-10", ease: "easeInOut" }, 'ones')
+      .to('.logo_liqiud_morph', { delay: 0.5, duration: 1.5, height: "10vh", width: "22vw", ease: "easeInOut" }, 'ones')
 
-    
-    t0.to('.ttlone',{duration : 1.2 , x : "-140%",ease: "easeInOut" },'twos')
-    .to('.ttltwo',{duration : 1.2 , x : "140%",ease: "easeInOut" },'twos')
-    .to('.logo_liqiud_morph',{duration : 0.6 , position : "absolute",bottom : -35,ease: "easeIn" },'twos')
-    .to('.portal',{delay: 0.3,duration : 0.6 ,opacity : 1,ease: "easeIn" },'twos')
 
-    t0.to('.overlay',{ display : "none"})
+    t0.to('.ttlone', { duration: 1.2, x: "-140%", ease: "easeInOut" }, 'twos')
+      .to('.ttltwo', { duration: 1.2, x: "140%", ease: "easeInOut" }, 'twos')
+      .to('.logo_liqiud_morph', { duration: 0.6, position: "absolute", bottom: -35, ease: "easeIn" }, 'twos')
+      .to('.portal', { delay: 0.3, duration: 0.6, opacity: 1, ease: "easeIn" }, 'twos')
+
+    t0.to('.overlay', { display: "none" })
 
 
 
@@ -74,11 +74,10 @@ function Home() {
 
   };
 
-  useEffect(()=>{
-    const body = document.querySelector('body')
-    body.style.overflow = "hidden !important";
-  })
 
+  useEffect(() => {
+    document.title = "Home - My Website";
+  }, []);
 
   return (
     <>
@@ -104,72 +103,80 @@ function Home() {
           </filter>
         </svg>
       </div>
-      <div className="homewrapper">
-        <Navbar />
 
-        <div className="topdesign_section_ttl_lbls">
-          <div className="modelsinfo">
 
-          </div>
-          <div className="title_slogn">
-            <h1>DreamPixel</h1>
-            <span>Text to image & video generator</span> <br />
-            <span style={{ opacity: 0.7 }}>DreamPixel V5o</span>
-          </div>
-          <div className="modelinfo">
 
-          </div>
-        </div>
+      <div className="mywraper">
 
-        <div ref={gsapref} className="cardholder">
-          <div className="card c1">
-            <img src={img1} alt="img1" />
-          </div>
-          <div className="card c2">
-            <img src={img2} alt="img2" />
-          </div>
-          <div className="card c3">
-            <img src={img3} alt="img3" />
-          </div>
-          <div className="card c4">
-            <img src={img4} alt="img4" />
-          </div>
-          <div className="card c5">
-            <img src={img5} alt="img5" />
-          </div>
-          <div className="card c6">
-            <img src={img6} alt="img6" />
-          </div>
-          <div className="card c7">
-            <img src={img7} alt="img7" />
-          </div>
-        </div>
+        <div className="homewrapper">
+          <Navbar />
 
-        <div className="bottom_section">
+          <div className="topdesign_section_ttl_lbls">
+            <div className="modelsinfo">
 
-          <p style={{ width: "38vw", fontSize: "0.7em", marginTop: "20px", textAlign: "center", opacity: "0.8" }}>
-            Unleash your creativity with our cutting-edge AI-powered image generator!
-            Transform your ideas into stunning, high-quality visuals in seconds, whether you need
-            artwork, designs, or unique concepts—perfect for every creator, designer, or dreamer
-          </p>
+            </div>
+            <div className="title_slogn">
+              <h1>DreamPixel</h1>
+              <span>Text to image & video generator</span> <br />
+              <span style={{ opacity: 0.7 }}>DreamPixel V5o</span>
+            </div>
+            <div className="modelinfo">
 
-          <div className="btnholders">
-
-            <button className="secondrybtn btn" onClick={handleClick} >
-              Try Dreampixel
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} color={"#ffffff"} fill={"none"}>
-                <path d="M20.0001 11.9998L4.00012 11.9998" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M15.0003 17C15.0003 17 20.0002 13.3176 20.0002 12C20.0002 10.6824 15.0002 7 15.0002 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-
-            <div className="lightbtn btn">
-              Login
             </div>
           </div>
+
+          <div ref={gsapref} className="cardholder">
+            <div className="card c1">
+              <img src={img1} alt="img1" />
+            </div>
+            <div className="card c2">
+              <img src={img2} alt="img2" />
+            </div>
+            <div className="card c3">
+              <img src={img3} alt="img3" />
+            </div>
+            <div className="card c4">
+              <img src={img4} alt="img4" />
+            </div>
+            <div className="card c5">
+              <img src={img5} alt="img5" />
+            </div>
+            <div className="card c6">
+              <img src={img6} alt="img6" />
+            </div>
+            <div className="card c7">
+              <img src={img7} alt="img7" />
+            </div>
+          </div>
+
+          <div className="bottom_section">
+
+            <p style={{ width: "38vw", fontSize: "0.7em", marginTop: "20px", textAlign: "center", opacity: "0.8" }}>
+              Unleash your creativity with our cutting-edge AI-powered image generator!
+              Transform your ideas into stunning, high-quality visuals in seconds, whether you need
+              artwork, designs, or unique concepts—perfect for every creator, designer, or dreamer
+            </p>
+
+            <div className="btnholders">
+
+              <button className="secondrybtn btn" onClick={handleClick} >
+                Try Dreampixel
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} color={"#ffffff"} fill={"none"}>
+                  <path d="M20.0001 11.9998L4.00012 11.9998" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M15.0003 17C15.0003 17 20.0002 13.3176 20.0002 12C20.0002 10.6824 15.0002 7 15.0002 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+
+              <div className="lightbtn btn">
+                Login
+              </div>
+            </div>
+          </div>
+          <div className="portal"></div>
         </div>
-        <div className="portal"></div>
+
       </div>
+
 
     </>
   )

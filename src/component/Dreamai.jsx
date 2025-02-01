@@ -6,7 +6,6 @@ import Historyimg from './imghistory/Historyimg';
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react';
 import { ToastContainer, toast } from 'react-toastify';
-import { color } from 'framer-motion';
 
 export const Dreamai = () => {
     const inputRef = useRef(null);

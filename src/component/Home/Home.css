@@ -12,6 +12,7 @@
     justify-content: space-between;
     margin-top: 2em;
     margin-bottom: 1em;
+    opacity: 0;
     /* background: #000; */
 }
 .title_slogn{
@@ -82,10 +83,73 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 1em;
+    opacity: 0;
   }
-  .portal{
+.portal{
+    opacity: 0;
+    bottom: 0;
+    z-index: 10;
+    position: absolute;
     width: 20vw;
     height: 2vh;
-    background: #000;
+    background: #1E1E1E;
     border-radius: 50px 50px 0px 0;
-  }
+}
+.overlay{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    /* gap: 0.1em; */
+    justify-content: space-around;
+    align-items: center;
+}
+.overlay h1{
+    font-size: 3.5em;
+}
+.ttlone{
+    transform: translateX(120%);
+}
+.ttltwo{
+    transform: translateX(-120%);
+}
+.logo_liqiud_morph{
+    filter: url(#gooey);
+    width: 15vw;
+    height: 30vh;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    gap: 30px;
+    position: absolute;
+}
+.morphani_logo{
+    background: #000;
+    border-radius: 5px;
+}
+.morph1{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.morph2{
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.morph3{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+.morph4{
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+#filterbby{
+    display: none;
+}

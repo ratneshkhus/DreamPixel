@@ -3,7 +3,7 @@ import Navbar from '../Navbar/Navbar'
 import "./Home.css"
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react'
-
+import { useNavigate } from 'react-router-dom';
 
 import img1 from '../../assets/img2.jpeg'
 import img2 from '../../assets/img1.jpeg'
@@ -13,59 +13,96 @@ import img5 from '../../assets/img3.jpeg'
 import img6 from '../../assets/img5.jpeg'
 import img7 from '../../assets/img6.jpeg'
 
-import Lenis from '@studio-freight/lenis'
-
-
 function Home() {
   const gsapref = useRef()
 
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      direction: 'vertical',
-      gestureDirection: 'vertical',
-      smooth: true,
-      mouseMultiplier: 1,
-      smoothTouch: false,
-      touchMultiplier: 2,
-      infinite: false,
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
-
   useGSAP(() => {
+    const t0 = gsap.timeline();
     const t1 = gsap.timeline();
-
-    // Animate card entry (y: 0) with stagger
     t1.to([".c1", ".c2", ".c3", ".c4", ".c5", ".c6", ".c7"], {
+      delay : 2.1,
       y: 0,
       duration: 0.9,
       ease: "back.out(0.3)",
       stagger: 0.1,
     });
 
-    t1.to('.c1', { delay : 0.3, duration : 0.7 , zIndex: 7, left: 0, rotate: 2, ease: "easeInOut" }, "cards")
-      .to('.c2', { delay : 0.3, duration : 0.7 , zIndex: 5, left: 150, rotate: -5, y: -5, ease: "easeInOut" }, "cards")
-      .to('.c3', { delay : 0.3, duration : 0.7 , zIndex: 4, left: 310, rotate: 3, y: -30, ease: "easeInOut" }, "cards")
-      .to('.c4', { delay : 0.3, duration : 0.7 , zIndex: 6, rotate: 0, x: -10, ease: "easeInOut" }, "cards")
-      .to('.c5', { delay : 0.3, duration : 0.7 , zIndex: 6, right: 335, rotate: 3, y: -20, ease: "easeInOut" }, "cards")
-      .to('.c6', { delay : 0.3, duration : 0.7 , zIndex: 6, right: 190, rotate: 8, y: 15, ease: "easeInOut" }, "cards")
-      .to('.c7', { delay : 0.3, duration : 0.7 , zIndex: 5, right: 0, rotate: -3, ease: "easeInOut" }, "cards");
+    t1.to('.c1', { delay: 0.3, duration: 0.7, zIndex: 7, left: 0, rotate: 2, ease: "easeInOut" }, "cards")
+      .to('.c2', { delay: 0.3, duration: 0.7, zIndex: 5, left: 150, rotate: -5, y: -5, ease: "easeInOut" }, "cards")
+      .to('.c3', { delay: 0.3, duration: 0.7, zIndex: 4, left: 340, rotate: 3, y: -30, ease: "easeInOut" }, "cards")
+      .to('.c4', { delay: 0.3, duration: 0.7, zIndex: 6, rotate: 0, x: -10, ease: "easeInOut" }, "cards")
+      .to('.c5', { delay: 0.3, duration: 0.7, zIndex: 6, right: 350, rotate: 3, y: -20, ease: "easeInOut" }, "cards")
+      .to('.c6', { delay: 0.3, duration: 0.7, zIndex: 6, right: 190, rotate: 8, y: 15, ease: "easeInOut" }, "cards")
+      .to('.c7', { delay: 0.3, duration: 0.7, zIndex: 5, right: 0, rotate: -3, ease: "easeInOut" }, "cards")
+      .to('.bottom_section', { delay: 0.3, duration: 1, opacity: 1, ease: "easeInOut" }, "cards")
+      .to('.topdesign_section_ttl_lbls', { delay: 0.3, duration: 1, opacity: 1, ease: "easeInOut" }, "cards");
+
+
+    t0.to('.ttlone',{duration : 1.5 , x : "30%",ease: "easeInOut" },'ones')
+    .to('.ttltwo',{duration : 1.5 , x : "-30%",ease: "easeInOut" },'ones')
+    .to('.morph1',{duration : 1.5 , x : "20" , y : "50",ease: "easeInOut" },'ones')
+    .to('.morph2',{duration : 1.5 , x : "-20" , y : "40",ease: "easeInOut" },'ones')
+    .to('.morph3',{duration : 1.5 , x: "20",ease: "easeInOut" },'ones')
+    .to('.morph4',{duration : 1.5 , x : "-20" , y : "0",ease: "easeInOut" },'ones')
+    .to('.logo_liqiud_morph',{delay : 0.5,duration : 1.5 , height : "10vh" , width : "22vw",ease: "easeInOut" },'ones')
+
+    
+    t0.to('.ttlone',{duration : 1.2 , x : "-140%",ease: "easeInOut" },'twos')
+    .to('.ttltwo',{duration : 1.2 , x : "140%",ease: "easeInOut" },'twos')
+    .to('.logo_liqiud_morph',{duration : 0.6 , position : "absolute",bottom : -35,ease: "easeIn" },'twos')
+    .to('.portal',{delay: 0.3,duration : 0.6 ,opacity : 1,ease: "easeIn" },'twos')
+
+    t0.to('.overlay',{ display : "none"})
+
+
+
 
   }, []);
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    gsap.to(".portal", {
+      width: "100%",
+      height: "100%",
+      duration: 1,
+      ease: "power3.out",
+      borderRadius: 0,
+      onComplete: () => navigate("/dreamai"),
+    });
+
+  };
+
+  useEffect(()=>{
+    const body = document.querySelector('body')
+    body.style.overflow = "hidden !important";
+  })
+
+
   return (
     <>
+      <div className="overlay">
+        <h1 className='ttlone'>Imagine, create, and redefine reality </h1>
+
+        <div className="logo_liqiud_morph">
+          <div className="morphani_logo morph1"></div>
+          <div className="morphani_logo morph2"></div>
+          <div className="morphani_logo morph3"></div>
+          <div className="morphani_logo morph4"></div>
+        </div>
+
+        <h1 className='ttltwo'>Imagine, create, and redefine reality </h1>
+        <svg id='filterbby'>
+          <filter id='gooey'>
+            <feGaussianBlur in='SourceGraphic' stdDeviation="10" />
+            <feColorMatrix values="
+        1 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0 
+        0 0 0 50 -10" />
+          </filter>
+        </svg>
+      </div>
       <div className="homewrapper">
         <Navbar />
 
@@ -82,7 +119,6 @@ function Home() {
 
           </div>
         </div>
-
 
         <div ref={gsapref} className="cardholder">
           <div className="card c1">
@@ -118,13 +154,13 @@ function Home() {
 
           <div className="btnholders">
 
-            <div className="secondrybtn btn">
+            <button className="secondrybtn btn" onClick={handleClick} >
               Try Dreampixel
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} color={"#ffffff"} fill={"none"}>
                 <path d="M20.0001 11.9998L4.00012 11.9998" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M15.0003 17C15.0003 17 20.0002 13.3176 20.0002 12C20.0002 10.6824 15.0002 7 15.0002 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </div>
+            </button>
 
             <div className="lightbtn btn">
               Login
@@ -133,7 +169,6 @@ function Home() {
         </div>
         <div className="portal"></div>
       </div>
-
 
     </>
   )

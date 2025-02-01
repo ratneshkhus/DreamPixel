@@ -14,16 +14,13 @@ export default function Navbar() {
             </div>
             <ul>
                 <li>
-                    <Link to={"/"} >home </Link>
+                    <Link style={{color : "black"}} to={"/"} >home </Link>
                 </li>
                 <li>
-                    <Link to={"/"} >home </Link>
+                    <Link style={{color : "black"}} to={"/aboutdev"} >about dev </Link>
                 </li>
                 <li>
-                    <Link to={"/"} >home </Link>
-                </li>
-                <li>
-                    <Link to={"/"} >home </Link>
+                    <Link style={{color : "black"}} to={"/aboutproject"} >this project </Link>
                 </li>
             </ul>
             <Link className='AIbtn' style={{ padding: "5px 1.3em" , height : "35px" }}>sign up</Link>

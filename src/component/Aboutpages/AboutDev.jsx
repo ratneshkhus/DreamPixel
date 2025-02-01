@@ -1,9 +1,13 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import './About.css'
 import logo from '../../assets/logo.png'
 import { Link } from 'react-router-dom';
 
 export default function AboutDev() {
+  
+  useEffect(() => {
+    document.title = "Ratnesh kumawat";
+  }, []);
   return (
     <>
       <section className='aboutdev'>

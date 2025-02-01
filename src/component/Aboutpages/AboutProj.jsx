@@ -1,7 +1,10 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import Navbar from '../Navbar/Navbar'
 
 export default function AboutProj() {
+  useEffect(() => {
+    document.title = "About this Project";
+  }, []);
   return (
     <>
       <Navbar />

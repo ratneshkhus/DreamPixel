@@ -75,10 +75,6 @@ function Home() {
   };
 
 
-  useEffect(() => {
-    document.title = "Home - My Website";
-  }, []);
-
   return (
     <>
       <div className="overlay">

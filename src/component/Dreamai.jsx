@@ -154,6 +154,7 @@ export const Dreamai = () => {
     };
 
     useEffect(() => {
+        document.title = "Text-to-Image DreamAI";
         if (error) {
             toast.error(error);
         }
@@ -203,7 +204,7 @@ export const Dreamai = () => {
                             <div>
                                 <h4>Dream Pixel</h4>
                                 <span>
-                                    <a style={{color: "white"}} href="https://www.instagram.com/_ratnesh.design?igsh=M2lzNmRveTQ5MXFo">
+                                    <a style={{ color: "white" }} href="https://www.instagram.com/_ratnesh.design?igsh=M2lzNmRveTQ5MXFo">
                                         by ratnesh
                                     </a>
                                 </span>

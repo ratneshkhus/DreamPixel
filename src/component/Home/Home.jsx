@@ -23,15 +23,14 @@ function Home() {
     t0.to('.ttlone', { duration: 1.5, x: "30%", ease: "easeInOut" }, 'ones')
       .to('.ttltwo', { duration: 1.5, x: "-30%", ease: "easeInOut" }, 'ones')
       .to('.morph1', { delay: 0.4, duration: 1, x: "20", y: "50",ease: "power4.out" }, 'ones')
-      .to('.morph2', { delay: 0.5, duration: 1, x: "-20", y: "42",ease: "power4.out"  }, 'ones')
+      .to('.morph2', { delay: 0.5, duration: 1, x: "-20", y: "44",ease: "power4.out"  }, 'ones')
       .to('.morph3', { delay: 0.7, duration: 1, x: "20",ease: "power4.out" }, 'ones')
       .to('.morph4', { delay: 0.9, duration: 1, x: "-20", y: "-10",ease: "power4.out" }, 'ones')
-      .to('.logo_liqiud_morph', { duration: 1.5, height: "15vh", width: "15vw" },'ones')
+      .to('.logo_liqiud_morph', { duration: 1.3, height: "15vh", width: "15vw" },'ones')
 
-
-    t0.to('.ttlone', { duration: 1, x: "-140%", ease: "easeInOut" }, 'twos')
+      .to('.ttlone', { duration: 1, x: "-140%", ease: "easeInOut" }, 'twos')
       .to('.ttltwo', { duration: 1, x: "140%", ease: "easeInOut" }, 'twos')
-      .to('.logo_liqiud_morph', { duration: 0.5, width: "22vw", position: "absolute", bottom: -45, ease: "easeIn" }, 'twos')
+      .to('.logo_liqiud_morph', { duration: 0.5, width: "22vw", position: "absolute", bottom: -150, ease: "easeIn" }, 'twos')
       .to('.portal', { delay: 0.3, duration: 0.6, opacity: 1, ease: "easeIn" }, 'twos')
 
     t0.to('.overlay', { display: "none" })

@@ -19,6 +19,24 @@ function Home() {
   useGSAP(() => {
     const t0 = gsap.timeline();
     const t1 = gsap.timeline();
+
+    t0.to('.ttlone', { duration: 1.5, x: "30%", ease: "easeInOut" }, 'ones')
+      .to('.ttltwo', { duration: 1.5, x: "-30%", ease: "easeInOut" }, 'ones')
+      .to('.morph1', { delay: 0.4, duration: 1, x: "20", y: "50",ease: "power4.out" }, 'ones')
+      .to('.morph2', { delay: 0.5, duration: 1, x: "-20", y: "42",ease: "power4.out"  }, 'ones')
+      .to('.morph3', { delay: 0.7, duration: 1, x: "20",ease: "power4.out" }, 'ones')
+      .to('.morph4', { delay: 0.9, duration: 1, x: "-20", y: "-10",ease: "power4.out" }, 'ones')
+      .to('.logo_liqiud_morph', { duration: 1.5, height: "15vh", width: "15vw" },'ones')
+
+
+    t0.to('.ttlone', { duration: 1, x: "-140%", ease: "easeInOut" }, 'twos')
+      .to('.ttltwo', { duration: 1, x: "140%", ease: "easeInOut" }, 'twos')
+      .to('.logo_liqiud_morph', { duration: 0.5, width: "22vw", position: "absolute", bottom: -45, ease: "easeIn" }, 'twos')
+      .to('.portal', { delay: 0.3, duration: 0.6, opacity: 1, ease: "easeIn" }, 'twos')
+
+    t0.to('.overlay', { display: "none" })
+
+
     t1.to([".c1", ".c2", ".c3", ".c4", ".c5", ".c6", ".c7"], {
       delay: 2.1,
       y: 0,
@@ -36,26 +54,6 @@ function Home() {
       .to('.c7', { delay: 0.3, duration: 0.7, zIndex: 5, right: 0, rotate: -3, ease: "easeInOut" }, "cards")
       .to('.bottom_section', { delay: 0.3, duration: 1, opacity: 1, ease: "easeInOut" }, "cards")
       .to('.topdesign_section_ttl_lbls', { delay: 0.3, duration: 1, opacity: 1, ease: "easeInOut" }, "cards");
-
-
-    t0.to('.ttlone', { duration: 1.5, x: "30%", ease: "easeInOut" }, 'ones')
-      .to('.ttltwo', { duration: 1.5, x: "-30%", ease: "easeInOut" }, 'ones')
-      .to('.morph1', { duration: 1.5, x: "20", y: "50", ease: "easeInOut" }, 'ones')
-      .to('.morph2', { duration: 1.5, x: "-20", y: "30", ease: "easeInOut" }, 'ones')
-      .to('.morph3', { duration: 1.5, x: "20", ease: "easeInOut" }, 'ones')
-      .to('.morph4', { duration: 1.5, x: "-20", y: "-10", ease: "easeInOut" }, 'ones')
-      .to('.logo_liqiud_morph', { delay: 0.5, duration: 1.5, height: "10vh", width: "22vw", ease: "easeInOut" }, 'ones')
-
-
-    t0.to('.ttlone', { duration: 1.2, x: "-140%", ease: "easeInOut" }, 'twos')
-      .to('.ttltwo', { duration: 1.2, x: "140%", ease: "easeInOut" }, 'twos')
-      .to('.logo_liqiud_morph', { duration: 0.6, position: "absolute", bottom: -35, ease: "easeIn" }, 'twos')
-      .to('.portal', { delay: 0.3, duration: 0.6, opacity: 1, ease: "easeIn" }, 'twos')
-
-    t0.to('.overlay', { display: "none" })
-
-
-
 
   }, []);
 
